@@ -1,0 +1,6 @@
+**/*.out
+**/*.o
+.DS_Store
+
+# ゲーム実行ファイル（個別指定）
+number_guessing/number_guessing
