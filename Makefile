@@ -1,5 +1,4 @@
 # ターミナルゲーム集
-# 作者: naoki
 
 # ゲームの種類
 GAMES = number_guessing \
@@ -35,6 +34,8 @@ clean:
 	@for game in $(GAMES); do \
 		echo "$(YELLOW)$$game をクリーン中...$(RESET)"; \
 		cd $$game && $(MAKE) clean && cd ..; \
+		echo ""; \
+		echo ""; \
 	done
 	@echo "$(GREEN)$(BOLD)✅ 全ゲームのクリーンが完了しました！$(RESET)"
 
