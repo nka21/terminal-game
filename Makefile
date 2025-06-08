@@ -2,7 +2,8 @@
 # 作者: naoki
 
 # ゲームの種類
-GAMES = number_guessing
+GAMES = number_guessing \
+		jajanken
 GAME_DIRS = $(foreach game,$(GAMES),$(game))
 
 # カラー配色
@@ -40,6 +41,10 @@ clean:
 number_guessing:
 	@echo "$(CYAN)🎯 数字予想ゲームを開始中...$(RESET)"
 	@cd number_guessing && $(MAKE) run
+
+jajanken:
+	@echo "$(CYAN)✊ じゃんけんゲームを開始中...$(RESET)"
+	@cd jajanken && $(MAKE) run
 
 # phonyターゲット宣言
 .PHONY: all list clean $(GAMES)
