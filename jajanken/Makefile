@@ -1,39 +1,37 @@
-# 数字予想ゲーム
-# 作者: naoki
+# じゃじゃんけん (元ネタ ハンターハンター)
 
-# コンパイラと設定
-CC = gcc
-CFLAGS = -Wall -Wextra -O2
-TARGET = number_guessing
+# Makefile for jajanken game
+CFLAGS = -Wall -Wextra -Werror
+TARGET = jajanken
 SOURCE = main.c
 HEADER = main.h
 
-# デフォルトターゲット
+# Default target
 all: $(TARGET)
 
-# 実行ファイルをビルド
+# Build the executable
 $(TARGET): $(SOURCE) $(HEADER)
 	@echo "🔨 $(TARGET) をコンパイル中..."
 	$(CC) $(CFLAGS) -o $(TARGET) $(SOURCE)
-	@echo "✅ ビルド完了！"
+	@echo "✅ ビルド完了!"
 
-# ゲームを実行
+# Run the game
 run: $(TARGET)
 	@./$(TARGET)
 
-# ビルドファイルを削除
+# Clean up build files
 clean:
 	@echo "🧹 クリーンアップ中..."
 	rm -f $(TARGET) $(TARGET)_debug *.o
-	@echo "✅ クリーンアップ完了！"
+	@echo "✅ クリーンアップ完了!"
 
-# ヘルプ表示
+# Display help
 help:
-	@echo "🎯 数字予想ゲーム - 利用可能なコマンド:"
+	@echo "🎯 じゃじゃんけん - 利用可能なコマンド:"
 	@echo "  make        - ゲームをビルド"
 	@echo "  make run    - ゲームをビルドして実行"
 	@echo "  make clean  - ビルドファイルを削除"
 	@echo "  make help   - このヘルプを表示"
 
-# phonyターゲット宣言
+# Phony targets declaration
 .PHONY: all run clean help

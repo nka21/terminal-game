@@ -1,8 +1,8 @@
 # ターミナルゲーム集
-# 作者: naoki
 
 # ゲームの種類
-GAMES = number_guessing
+GAMES = number_guessing \
+		jajanken
 GAME_DIRS = $(foreach game,$(GAMES),$(game))
 
 # カラー配色
@@ -33,13 +33,19 @@ clean:
 	@echo "$(CYAN)$(BOLD)🧹 全ゲームをクリーン中...$(RESET)"
 	@for game in $(GAMES); do \
 		echo "$(YELLOW)$$game をクリーン中...$(RESET)"; \
-		cd $$game && $(MAKE) clean && cd ..; \
+		cd $$game && $(MAKE) --no-print-directory clean && cd ..; \
+		echo ""; \
+		echo ""; \
 	done
 	@echo "$(GREEN)$(BOLD)✅ 全ゲームのクリーンが完了しました！$(RESET)"
 
 number_guessing:
 	@echo "$(CYAN)🎯 数字予想ゲームを開始中...$(RESET)"
-	@cd number_guessing && $(MAKE) run
+	@cd number_guessing && $(MAKE) --no-print-directory run
+
+jajanken:
+	@echo "$(CYAN)✊ じゃんけんゲームを開始中...$(RESET)"
+	@cd jajanken && $(MAKE) --no-print-directory run
 
 # phonyターゲット宣言
 .PHONY: all list clean $(GAMES)
