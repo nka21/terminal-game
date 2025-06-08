@@ -17,8 +17,7 @@ $(TARGET): $(SOURCE) $(HEADER)
 
 # Run the game
 run: $(TARGET)
-	@echo "🎮 ゲームを開始中..."
-	./$(TARGET)
+	@./$(TARGET)
 
 # Clean up build files
 clean:

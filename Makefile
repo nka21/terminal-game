@@ -33,7 +33,7 @@ clean:
 	@echo "$(CYAN)$(BOLD)🧹 全ゲームをクリーン中...$(RESET)"
 	@for game in $(GAMES); do \
 		echo "$(YELLOW)$$game をクリーン中...$(RESET)"; \
-		cd $$game && $(MAKE) clean && cd ..; \
+		cd $$game && $(MAKE) --no-print-directory clean && cd ..; \
 		echo ""; \
 		echo ""; \
 	done
@@ -41,11 +41,11 @@ clean:
 
 number_guessing:
 	@echo "$(CYAN)🎯 数字予想ゲームを開始中...$(RESET)"
-	@cd number_guessing && $(MAKE) run
+	@cd number_guessing && $(MAKE) --no-print-directory run
 
 jajanken:
 	@echo "$(CYAN)✊ じゃんけんゲームを開始中...$(RESET)"
-	@cd jajanken && $(MAKE) run
+	@cd jajanken && $(MAKE) --no-print-directory run
 
 # phonyターゲット宣言
 .PHONY: all list clean $(GAMES)
