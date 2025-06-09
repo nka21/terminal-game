@@ -35,7 +35,6 @@ clean:
 		echo "$(YELLOW)$$game をクリーン中...$(RESET)"; \
 		cd $$game && $(MAKE) --no-print-directory clean && cd ..; \
 		echo ""; \
-		echo ""; \
 	done
 	@echo "$(GREEN)$(BOLD)✅ 全ゲームのクリーンが完了しました！$(RESET)"
 

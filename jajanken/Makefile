@@ -12,7 +12,7 @@ all: $(TARGET)
 # Build the executable
 $(TARGET): $(SOURCE) $(HEADER)
 	@echo "🔨 $(TARGET) をコンパイル中..."
-	$(CC) $(CFLAGS) -o $(TARGET) $(SOURCE)
+	@$(CC) $(CFLAGS) -o $(TARGET) $(SOURCE)
 	@echo "✅ ビルド完了!"
 
 # Run the game
@@ -22,7 +22,7 @@ run: $(TARGET)
 # Clean up build files
 clean:
 	@echo "🧹 クリーンアップ中..."
-	rm -f $(TARGET) $(TARGET)_debug *.o
+	@rm -f $(TARGET) $(TARGET)_debug *.o
 	@echo "✅ クリーンアップ完了!"
 
 # Display help

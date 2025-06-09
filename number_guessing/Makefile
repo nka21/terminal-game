@@ -14,7 +14,7 @@ all: $(TARGET)
 # 実行ファイルをビルド
 $(TARGET): $(SOURCE) $(HEADER)
 	@echo "🔨 $(TARGET) をコンパイル中..."
-	$(CC) $(CFLAGS) -o $(TARGET) $(SOURCE)
+	@$(CC) $(CFLAGS) -o $(TARGET) $(SOURCE)
 	@echo "✅ ビルド完了！"
 
 # ゲームを実行
@@ -24,7 +24,7 @@ run: $(TARGET)
 # ビルドファイルを削除
 clean:
 	@echo "🧹 クリーンアップ中..."
-	rm -f $(TARGET) $(TARGET)_debug *.o
+	@rm -f $(TARGET) $(TARGET)_debug *.o
 	@echo "✅ クリーンアップ完了！"
 
 # ヘルプ表示
